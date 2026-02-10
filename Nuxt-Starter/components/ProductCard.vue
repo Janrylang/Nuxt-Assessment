@@ -13,6 +13,8 @@
 </template>
 
 <script setup>
+const cartStore = useCartStore();
+
 const props = defineProps({
   product: {
     type: Object,
@@ -21,7 +23,12 @@ const props = defineProps({
 });
 
 const handleAddToCart = () => {
-  props.product.quantity = (props.product.quantity || 0) + 1;
+  cartStore.addItem({
+    id: props.product.id,
+    name: props.product.name,
+    price: props.product.price,
+  });
+  console.log('Item added to cart!', cartStore.items)
 };
 </script>
 

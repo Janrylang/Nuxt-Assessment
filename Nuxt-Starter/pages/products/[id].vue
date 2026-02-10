@@ -24,7 +24,7 @@ const {
   data: product,
   pending,
   error,
-} = await useFetch(`/api/products/${route.params.productId}`);
+} = await useFetch(`/api/products/${route.params.id}`);
 
 const handleAddToCart = () => {
   if (product.value) {

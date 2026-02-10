@@ -17,9 +17,12 @@ defineProps({
   },
 });
 
+const emit = defineEmits(['update:modelValue']);
+
 const onInput = (event) => {
   const value = event.target.value;
   console.log('Search:', value);
+  emit('update:modelValue', value);
 };
 </script>
 

@@ -18,18 +18,18 @@
 const cartStore = useCartStore();
 const searchQuery = ref('');
 
-let products = [];
+const products = ref([]);
 
 onMounted(async () => {
-  const response = await fetch('/api/product');
+  const response = await fetch('/api/products');
   const data = await response.json();
-  products = data;
+  products.value = data;
 });
 
 const filteredProducts = computed(() => {
-  if (!searchQuery.value) return products;
+  if (!searchQuery.value) return products.value;
   const query = searchQuery.value.toLowerCase();
-  return products.filter((p) => p.name.toLowerCase().includes(query));
+  return products.value.filter((p) => p.name.toLowerCase().includes(query));
 });
 
 const handleAddToCart = (product) => {
