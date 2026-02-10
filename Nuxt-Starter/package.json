@@ -1,0 +1,22 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@oxc-transform/binding-wasm32-wasi": "0.112.0",
+    "@oxc-parser/binding-wasm32-wasi": "0.112.0",
+    "@oxc-minify/binding-wasm32-wasi": "0.112.0",
+    "@pinia/nuxt": "^0.5.0",
+    "nuxt": "^3.14.0",
+    "pinia": "^2.2.0",
+    "vue": "^3.5.0",
+    "vue-router": "^4.4.0"
+  }
+}
